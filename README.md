@@ -1,8 +1,14 @@
 # 💫 Database Project
 
-Database project for my college developed using Firebird SQL.
+This is a database project for my college developed using Firebird SQL.
 
-# 📕 Directory structure
+# 📕 Directory Structure
 
-- `/migrations`: Database creation, insertion and deletion scripts.
-- `/queries`: All SQL queries.
+- `src/migrations`: Scripts for database creation, insertion, and deletion.
+- `src/queries`: All SQL queries.
+
+# 🧱 Database Model
+
+I use drawsql.app for modeling the database.
+
+![Database model image](/images/db_model.png)
