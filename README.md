@@ -4,8 +4,8 @@ This is a database project for my college developed using Firebird SQL.
 
 # 📕 Directory Structure
 
-- `src/migrations`: Scripts for database creation, insertion, and deletion.
-- `src/queries`: All SQL queries.
+- `/migrations`: Scripts for database creation, insertion, and deletion.
+- `/queries`: All SQL queries.
 
 # 🧱 Database Model
 
