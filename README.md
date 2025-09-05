@@ -2,6 +2,13 @@
 
 This is a database project for my college developed using Firebird SQL.
 
+# 🙏 Group Members
+
+* Davi
+* Pedro
+* Ulisses
+* Rhuan
+
 # 📕 Directory Structure
 
 - `/migrations`: Scripts for database creation, insertion, and deletion.
