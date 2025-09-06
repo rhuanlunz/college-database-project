@@ -1,0 +1,4 @@
+SELECT * 
+FROM 
+	USUARIOS 
+WHERE verificado = TRUE;

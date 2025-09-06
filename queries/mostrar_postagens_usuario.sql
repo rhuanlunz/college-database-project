@@ -1,0 +1,8 @@
+SELECT
+    U.nome,
+	COUNT(P.id) AS TOTAL_DE_POSTAGENS
+FROM
+    USUARIOS AS U
+INNER JOIN POSTAGENS AS P
+    ON U.id = P.id_usuario
+GROUP BY U.nome;
