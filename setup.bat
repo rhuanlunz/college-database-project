@@ -11,7 +11,7 @@ set "DB_PASS=masterkey"
 :: --- Fim da Configuracao ---
 
 set "BASE_PATH=%~dp0"
-set "DB_FILE=%BASE_PATH%database\college_project.fdb"
+set "DB_FILE=%BASE_PATH%database\RedeSocial.fdb"
 set "SCRIPT_CREATE=%BASE_PATH%migrations\create.sql"
 set "SEEDS_FOLDER=%BASE_PATH%migrations\seeds"
 
@@ -52,28 +52,30 @@ echo.
 :: ================================================================
 ::               SECAO DE SEEDS MODIFICADA
 :: ================================================================
-:: REMOVIDO O LOOP 'FOR'. AGORA EXECUTAMOS CADA SCRIPT NA ORDEM CORRETA.
+:: Agora executamos cada script NA ORDEM CORRETA
 :: ================================================================
 
 echo [ETAPA 3/3] Inserindo dados iniciais (seeds)...
 
 REM --- PRIMEIRO, CRIAMOS OS DADOS MESTRE (USUARIOS) ---
-echo    - Executando: user_account.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\user_account.sql" "%DB_FILE%"
+echo    - Executando: usuarios.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\usuarios.sql" "%DB_FILE%"
 
 REM --- DEPOIS, OS DADOS QUE DEPENDEM DOS USUARIOS ---
-echo    - Executando: post.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\post.sql" "%DB_FILE%"
-echo    - Executando: user_follower.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\user_follower.sql" "%DB_FILE%"
-echo    - Executando: user_activity_log.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\user_activity_log.sql" "%DB_FILE%"
+echo    - Executando: configuracoes_usuario.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
+echo    - Executando: postagens.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
+echo    - Executando: seguidores.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\seguidores.sql" "%DB_FILE%"
+echo    - Executando: log_atividades_usuarios.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\log_atividades_usuarios.sql" "%DB_FILE%"
 
 REM --- POR FIM, OS DADOS QUE DEPENDEM DE POSTS E USUARIOS ---
-echo    - Executando: post_comment.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\post_comment.sql" "%DB_FILE%"
-echo    - Executando: post_like.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\post_like.sql" "%DB_FILE%"
+echo    - Executando: comentarios.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\comentarios.sql" "%DB_FILE%"
+echo    - Executando: curtidas.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\curtidas.sql" "%DB_FILE%"
 
 echo Dados inseridos com sucesso!
 echo.

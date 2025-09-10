@@ -14,7 +14,7 @@ VALUES (
     'joao_martins', 
     'joao.martins@example.com', 
     '5f4dcc3b5aa765d61d8327deb882cf99',
-    'Desenvolvedor backend e fã de café.',
+    'Desenvolvedor backend e fï¿½ de cafï¿½.',
     'Masculino',
     '1988-11-23'
 );
@@ -41,7 +41,7 @@ VALUES (
     'miguel.fernandes', 
     'miguel.fernandes@example.com', 
     '098f6bcd4621d373cade4e832627b4f6',
-    'Designer gráfico e amante de música.',
+    'Designer grï¿½fico e amante de mï¿½sica.',
     'Masculino',
     '1990-03-30',
     '/images/users/miguel.jpg'
@@ -139,5 +139,27 @@ VALUES (
     'Gamer e streamer nas horas vagas.',
     'Feminino',
     '1998-12-15',
+    TRUE
+);
+
+INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, verificado)
+VALUES (
+    'luccas_samhuel',
+    'luca.samuca@example.com',
+    'a87ff679a2f3e71d9181a67b7542122c',
+    'Lenhador e Piloto de Drone Profissional',
+    'Mascunlino',
+    '1995-11-06',
+    TRUE
+);
+
+INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, verificado)
+VALUES (
+    'yuri_alberto',
+    'yuriz.bebeto@example.com',
+    'a87ff679a2f3e71d9181a67b7542122c',
+    'Jogador e Pai do SEP <3!!',
+    'Mascunlino',
+    '1999-09-01',
     TRUE
 );
