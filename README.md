@@ -9,6 +9,12 @@ This is a database project for my college developed using Firebird SQL.
 * Rhuan
 * Ulisses
 
+# Creating Database
+
+To create the database, run the `setup.bat` script.
+
+However, before executing it, you need to update the variable called `ISQL_EXECUTAVEL` by setting it to the full path of the Firebird `isql.exe` tool.
+
 # 📕 Directory Structure
 
 - `/migrations`: Scripts for database creation, insertion, and deletion.

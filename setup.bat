@@ -4,7 +4,7 @@ title Configurando Banco de Dados
 :: ================================================================
 ::                     AREA DE CONFIGURACAO
 :: ================================================================
-set "ISQL_EXECUTAVEL=C:\Exata\Install\Firebird-4.0.2.2816-0-Win32\isql.exe"
+set "ISQL_EXECUTAVEL=C:\Program Files\Firebird\Firebird_5_0\isql.exe"
 set "DB_USER=SYSDBA"
 set "DB_PASS=masterkey"
 
