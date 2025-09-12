@@ -23,6 +23,6 @@ No entanto, antes de executá-lo, você precisa atualizar a variável chamada `I
 
 ## 🧱 Modelo de Banco de Dados
 
-Eu uso [drawsql.app](https://drawsql.app) para modelar o banco de dados.
+Usamos o [drawsql.app](https://drawsql.app) para modelar o banco de dados.
 
 ![Imagem do modelo de banco de dados](/images/db_model.png)
