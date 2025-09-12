@@ -1,28 +1,28 @@
-# 💫 Database Project
+## 💫 Projeto de Banco de Dados
 
-This is a database project for my college developed using Firebird SQL.
+Este é um projeto de banco de dados para a minha faculdade, desenvolvido usando Firebird SQL.
 
-# 🙏 Group Members
+## 🙏 Membros do Grupo
 
 * Davi
 * Pedro
 * Rhuan
 * Ulisses
 
-# Creating Database
+## Criando o Banco de Dados
 
-To create the database, run the `setup.bat` script.
+Para criar o banco de dados, execute o script `setup.bat`.
 
-However, before executing it, you need to update the variable called `ISQL_EXECUTAVEL` by setting it to the full path of the Firebird `isql.exe` tool.
+No entanto, antes de executá-lo, você precisa atualizar a variável chamada `ISQL_EXECUTAVEL`, definindo-a como o caminho completo da ferramenta `isql.exe` do Firebird.
 
-# 📕 Directory Structure
+## 📕 Estrutura do Diretório
 
-- `/migrations`: Scripts for database creation, insertion, and deletion.
-- `/migrations/seed`: Scripts for data insertion.
-- `/queries`: All SQL queries.
+- `/migrations`: Scripts para criação, inserção e exclusão do banco de dados.
+- `/migrations/seed`: Scripts para inserção de dados.
+- `/queries`: Todas as consultas SQL.
 
-# 🧱 Database Model
+## 🧱 Modelo de Banco de Dados
 
-I use [drawsql.app](https://drawsql.app) for modeling the database.
+Eu uso [drawsql.app](https://drawsql.app) para modelar o banco de dados.
 
-![Database model image](/images/db_model.png)
+![Imagem do modelo de banco de dados](/images/db_model.png)
