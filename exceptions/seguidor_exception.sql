@@ -1,0 +1,1 @@
+CREATE OR ALTER EXCEPTION SEGUIDOR_EXCEPTION 'Um usuario nao pode seguir a si mesmo';
