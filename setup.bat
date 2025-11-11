@@ -66,8 +66,11 @@ echo    - Executando: perfil_log_trigger.sql
 echo    - Executando: post_log_trigger.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\post_log_trigger.sql" "%DB_FILE%"
 
-echo    - Executando: seguidor_trigger.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\seguidor_trigger.sql" "%DB_FILE%"
+echo    - Executando: seguidor_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\seguidor_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: curtidas_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\curtidas_log_trigger.sql" "%DB_FILE%"
 echo .
 
 :: ================================================================
@@ -83,8 +86,8 @@ echo    - Executando: usuarios.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\usuarios.sql" "%DB_FILE%"
 
 REM --- DEPOIS, OS DADOS QUE DEPENDEM DOS USUARIOS ---
-echo    - Executando: configuracoes_usuario.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
+echo    - Executando: configuracao_usuarios.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\configuracao_usuarios.sql" "%DB_FILE%"
 echo    - Executando: postagens.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
 echo    - Executando: seguidores.sql
