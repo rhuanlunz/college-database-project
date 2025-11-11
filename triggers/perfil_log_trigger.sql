@@ -8,7 +8,7 @@ CREATE TRIGGER PERFIL_LOG_TRIGGER
 AS 
 BEGIN 
     INSERT INTO LOG_ATIVIDADES_USUARIOS (ID_USUARIO, ACAO_REALIZADA) VALUES 
-        (NEW.ID, 'updated profile');
+        (NEW.ID, 'atualizou seu perfil');
 END^
 
 SET TERM ; ^
