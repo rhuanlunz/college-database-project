@@ -94,7 +94,7 @@ INSERT INTO configuracao_usuarios
 VALUES
 (16, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, 'pt-BR');
 
-INSERT INTO configuracao_usuarios/
+INSERT INTO configuracao_usuarios
 (id_usuario, perfil_privado, modo_escuro, notificacoes, mostrar_status_online,
  permitir_novos_seguidores, permitir_mensagens_privadas, filtro_conteudo, idioma)
 VALUES

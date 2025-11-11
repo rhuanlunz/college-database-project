@@ -12,8 +12,10 @@ set "DB_PASS=masterkey"
 
 set "BASE_PATH=%~dp0"
 set "DB_FILE=%BASE_PATH%database\RedeSocial.fdb"
-set "SCRIPT_CREATE=%BASE_PATH%migrations\create.sql"
-set "SEEDS_FOLDER=%BASE_PATH%migrations\seeds"
+set "SCRIPT_CREATE=%BASE_PATH%src\migrations\create.sql"
+set "SEEDS_FOLDER=%BASE_PATH%src\migrations\seeds"
+set "TRIGGERS_FOLDER=%BASE_PATH%src\triggers"
+set "EXCEPTIONS_FOLDER=%BASE_PATH%src\exceptions"
 
 echo.
 echo === INICIANDO CONFIGURACAO DO BANCO DE DADOS ===
@@ -49,6 +51,28 @@ if %errorlevel% neq 0 (
 echo Tabelas criadas com sucesso!
 echo.
 
+echo    - Executando: seguidor_exception.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\seguidor_exception.sql" "%DB_FILE%"
+
+echo    - Executando: comentario_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\comentario_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: configuracoes_usuarios_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\configuracoes_usuarios_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: perfil_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\perfil_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: post_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\post_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: seguidor_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\seguidor_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: curtidas_log_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\curtidas_log_trigger.sql" "%DB_FILE%"
+echo .
+
 :: ================================================================
 ::               SECAO DE SEEDS MODIFICADA
 :: ================================================================
@@ -62,14 +86,12 @@ echo    - Executando: usuarios.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\usuarios.sql" "%DB_FILE%"
 
 REM --- DEPOIS, OS DADOS QUE DEPENDEM DOS USUARIOS ---
-echo    - Executando: configuracoes_usuario.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
+echo    - Executando: configuracao_usuarios.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\configuracao_usuarios.sql" "%DB_FILE%"
 echo    - Executando: postagens.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\postagens.sql" "%DB_FILE%"
 echo    - Executando: seguidores.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\seguidores.sql" "%DB_FILE%"
-echo    - Executando: log_atividades_usuarios.sql
-"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%SEEDS_FOLDER%\log_atividades_usuarios.sql" "%DB_FILE%"
 
 REM --- POR FIM, OS DADOS QUE DEPENDEM DE POSTS E USUARIOS ---
 echo    - Executando: comentarios.sql
