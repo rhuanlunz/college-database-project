@@ -12,10 +12,10 @@ set "DB_PASS=masterkey"
 
 set "BASE_PATH=%~dp0"
 set "DB_FILE=%BASE_PATH%database\RedeSocial.fdb"
-set "SCRIPT_CREATE=%BASE_PATH%migrations\create.sql"
-set "SEEDS_FOLDER=%BASE_PATH%migrations\seeds"
-set "TRIGGERS_FOLDER=%BASE_PATH%triggers"
-set "EXCEPTIONS_FOLDER=%BASE_PATH%exceptions"
+set "SCRIPT_CREATE=%BASE_PATH%src\migrations\create.sql"
+set "SEEDS_FOLDER=%BASE_PATH%src\migrations\seeds"
+set "TRIGGERS_FOLDER=%BASE_PATH%src\triggers"
+set "EXCEPTIONS_FOLDER=%BASE_PATH%src\exceptions"
 
 echo.
 echo === INICIANDO CONFIGURACAO DO BANCO DE DADOS ===
