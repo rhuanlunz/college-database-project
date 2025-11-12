@@ -1,6 +1,6 @@
 INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, verificado)
 VALUES (
-    'ana.silva', 
+    'ana silva', 
     'ana.silva@example.com', 
     'e99a18c428cb38d5f260853678922e03',
     'Apaixonada por fotografia e viagens.',
@@ -21,7 +21,7 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha, genero, data_aniversario, verificado)
 VALUES (
-    'carla.dev', 
+    'carladev', 
     'carla.dev@example.com', 
     '7c6a180b36896a0a8c02787eeafb0e4c',
     'Feminino',
@@ -31,14 +31,14 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha)
 VALUES (
-    'user123', 
+    'user', 
     'user123@example.com', 
     '25d55ad283aa400af464c76d713c07ad'
 );
 
 INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, caminho_foto_perfil)
 VALUES (
-    'miguel.fernandes', 
+    'miguel_fernandes', 
     'miguel.fernandes@example.com', 
     '098f6bcd4621d373cade4e832627b4f6',
     'Designer gr�fico e amante de m�sica.',
@@ -49,7 +49,7 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, verificado)
 VALUES (
-    'lucas.almeida',
+    'lucasalmeida',
     'lucas.almeida@example.com',
     '5ebe2294ecd0e0f08eab7690d2a6ee69',
     'Curioso por tecnologia e astronomia.',
@@ -70,7 +70,7 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha, descricao, data_aniversario, caminho_foto_perfil)
 VALUES (
-    'carlos.tech',
+    'carlos_tech',
     'carlos.tech@example.com',
     '8d9c307cb7f3c4a32822a51922d1ceaa',
     'Engenheiro de software.',
@@ -88,7 +88,7 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha, descricao, genero, data_aniversario, verificado)
 VALUES (
-    'ricardo.oliveira',
+    'ricardo_oliveira',
     'ricardo.oliveira@example.com',
     '45c48cce2e2d7fbdea1afc51c7c6ad26',
     'Amante de esportes e cultura pop.',
@@ -124,7 +124,7 @@ VALUES (
 
 INSERT INTO usuarios (nome, email, hash_senha, descricao, genero)
 VALUES (
-    'felipe.ramos',
+    'feliperamos',
     'felipe.ramos@example.com',
     '1679091c5a880faf6fb5e6087eb1b2dc',
     'Empreendedor e entusiasta de IA.',
