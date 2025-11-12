@@ -5,7 +5,7 @@ CREATE TABLE usuarios (
     
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
-    hash_senha VARCHAR(255) NOT NULL,
+    hash_senha VARBINARY(64) NOT NULL,
     descricao VARCHAR(100),
     genero VARCHAR(25) DEFAULT NULL,
 	caminho_foto_perfil VARCHAR(500) DEFAULT '/profile/pic/path',
