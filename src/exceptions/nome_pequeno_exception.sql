@@ -1,0 +1,1 @@
+CREATE OR ALTER EXCEPTION NOME_PEQUENO_EXCEPTION 'O nome de usuario deve ter ao menos tres caracteres de tamanho!';

@@ -1,0 +1,1 @@
+CREATE OR ALTER EXCEPTION senha_pequena_exception 'A senha de usuario deve ter ao menos oito caracteres de tamanho!';

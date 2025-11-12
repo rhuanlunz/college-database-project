@@ -1,0 +1,1 @@
+CREATE OR ALTER EXCEPTION EMAIL_INVALIDO_EXCEPTION 'O email inserido e invalido';

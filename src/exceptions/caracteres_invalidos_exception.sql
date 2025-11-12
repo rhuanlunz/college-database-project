@@ -1,0 +1,1 @@
+CREATE OR ALTER EXCEPTION CARACTERES_INVALIDOS_EXCEPTION 'Os caracteres usados sao invalidos';
