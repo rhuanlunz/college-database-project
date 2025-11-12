@@ -16,6 +16,7 @@ set "SCRIPT_CREATE=%BASE_PATH%src\migrations\create.sql"
 set "SEEDS_FOLDER=%BASE_PATH%src\migrations\seeds"
 set "TRIGGERS_FOLDER=%BASE_PATH%src\triggers"
 set "EXCEPTIONS_FOLDER=%BASE_PATH%src\exceptions"
+set "FUNCTIONS_FOLDER=%BASE_PATH%src\functions"
 
 echo.
 echo === INICIANDO CONFIGURACAO DO BANCO DE DADOS ===
@@ -51,8 +52,35 @@ if %errorlevel% neq 0 (
 echo Tabelas criadas com sucesso!
 echo.
 
+:: Exceções
+
 echo    - Executando: seguidor_exception.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\seguidor_exception.sql" "%DB_FILE%"
+
+echo    - Executando: caracteres_invalidos_exception.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\caracteres_invalidos_exception.sql" "%DB_FILE%"
+
+echo    - Executando: email_invalido_exception.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\email_invalido_exception.sql" "%DB_FILE%"
+
+echo    - Executando: nome_pequeno_exception.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\nome_pequeno_exception.sql" "%DB_FILE%"
+
+echo    - Executando: senha_pequena_exception.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%EXCEPTIONS_FOLDER%\senha_pequena_exception.sql" "%DB_FILE%"
+
+:: Functions
+
+echo    - Executando: tratar_email_usuario.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%FUNCTIONS_FOLDER%\tratar_email_usuario.sql" "%DB_FILE%"
+
+echo    - Executando: tratar_nome_usuario.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%FUNCTIONS_FOLDER%\tratar_nome_usuario.sql" "%DB_FILE%"
+
+echo    - Executando: tratar_senha_usuario.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%FUNCTIONS_FOLDER%\tratar_senha_usuario.sql" "%DB_FILE%"
+
+:: Triggers
 
 echo    - Executando: comentario_log_trigger.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\comentario_log_trigger.sql" "%DB_FILE%"
@@ -71,6 +99,9 @@ echo    - Executando: seguidor_log_trigger.sql
 
 echo    - Executando: curtidas_log_trigger.sql
 "%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\curtidas_log_trigger.sql" "%DB_FILE%"
+
+echo    - Executando: tratar_novo_usuario_trigger.sql
+"%ISQL_EXECUTAVEL%" -user %DB_USER% -pass %DB_PASS% -i "%TRIGGERS_FOLDER%\tratar_novo_usuario_trigger.sql" "%DB_FILE%"
 echo .
 
 :: ================================================================
