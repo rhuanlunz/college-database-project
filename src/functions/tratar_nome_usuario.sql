@@ -15,7 +15,7 @@ BEGIN
 
     IF (nome_sem_espacos NOT SIMILAR TO '[A-Za-z_]+') THEN
         EXCEPTION CARACTERES_INVALIDOS_EXCEPTION;
-
+        
     RETURN nome_sem_espacos;
 END^
 
