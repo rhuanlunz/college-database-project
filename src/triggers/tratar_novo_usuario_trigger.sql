@@ -7,9 +7,9 @@ CREATE OR ALTER TRIGGER tratar_novo_usuario_trigger
         ON USUARIOS
 AS
 BEGIN
-    NEW.NOME = tratar_nome_usuario(NEW.NOME);
-    NEW.EMAIL = tratar_email_usuario(NEW.EMAIL);
-    NEW.HASH_SENHA = tratar_senha_usuario(NEW.HASH_SENHA);
+    NEW.NOME = tratar_nome_usuario(NEW.NOME);               -- chama funcões e passa como argumento o necessario
+    NEW.EMAIL = tratar_email_usuario(NEW.EMAIL);            -- chama funcões e passa como argumento o necessario
+    NEW.HASH_SENHA = tratar_senha_usuario(NEW.HASH_SENHA);  -- chama funcões e passa como argumento o necessario
 END^
 
 SET TERM ; ^
